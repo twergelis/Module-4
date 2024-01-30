@@ -1,0 +1,75 @@
+> Frequency <- c(0.6,0.3,0.4,0.4,0.2,0.6,0.3,0.4,0.9,0.2)
+> BP <- c(103,87,32,42,59,109,78,205,135,176)
+> First <- c(1,1,1,1,0,0,0,0,NA,1)
+> Second <- c(0,0,1,1,0,0,1,1,1,1)
+> FinalDecision <- c(0,1,0,1,0,1,0,1,1,1)
+
+> boxplot(Frequency, BP, First, Second, FinalDecision)
+  #Did not like the variability between BP and the other numbers. Decided to seperate BP from the other measurements.
+
+> boxplot(Frequency, First, Second, FinalDecision)
+  #Didn't like the outcome... need to add labels.
+
+> labels=c("Frequency","First","Second","FinalDecision")
+> boxplot(Frequency, First, Second, FinalDecision, names=labels)
+  #Better... need Y-axis and title.
+
+> boxplot(Frequency, First, Second, FinalDecision, names=labels,
++ ylab="Frequency",
++ main="Boxplot for Frequency, First, Second, and Final Decisions"
++ )
+  #Best.
+
+> boxplot(BP,
++ ylab="Patient Blood Pressure",
++ main="Measurement of Patient Blood Pressure"
++ )
+  #Good for BP.
+  #End boxplots.
+
+> hist(Frequency, BP, First, Second, FinalDecision)
+Error in plot.window(xlim, ylim, "", ...) : need finite 'ylim' values
+> hist(Frequency)
+> hist(Frequency, First)
+Error in plot.window(xlim, ylim, "", ...) : need finite 'ylim' values
+> hist(First)
+  #One per histogram.
+
+> hist(Frequency)
+  #Need labels.
+
+> hist(Frequency,
++ ylab="Number of Patients",
++ xlab="Frequency of Hospital Visits (Over 12-months)",
++ main="Patient Hospital Visition Frequency"
++ )
+  #Good.
+
+> hist(BP,
++ ylab="Number of Patients",
++ main="Measurement of Patient Blood Pressure",
++ xlab="Range of Blood Pressure"
++ )
+  #Good.
+
+> hist(First,
++ main="Histogram of Doctor's First Decision",
++ ylab="Patient Count",
++ xlab="Doctor's Decision"
++ )
+  #Good.
+
+> hist(Second,
++ main="Histogram of Doctor's Second Decision",
++ ylab="Patient Count",
++ xlab="Doctor's Decision"
++ )
+  #Good.
+
+> hist(FinalDecision,
++ main="Histogram of Doctor's Final Decision",
++ ylab="Patient Count",
++ xlab="Doctor's Decision"
++ )
+  #Good.
+
